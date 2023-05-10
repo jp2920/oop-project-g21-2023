@@ -27,6 +27,11 @@ public:
     float getWeight();
 };
 
+
+int x;
+
+
+
 #endif /* PERSON_H */
 
 
