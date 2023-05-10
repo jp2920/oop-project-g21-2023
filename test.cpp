@@ -29,7 +29,7 @@ public:
 
 
 int x;
-
+ 
 
 
 #endif /* PERSON_H */
