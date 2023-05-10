@@ -29,8 +29,12 @@ public:
 
 
 int x;
- 
+
 
 
 #endif /* PERSON_H */
->>>>>>> refs/remotes/origin/des
+
+
+
+
+
