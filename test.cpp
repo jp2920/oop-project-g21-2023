@@ -29,6 +29,8 @@ public:
 
 
 int x;
+int z;
+
 
 
 
