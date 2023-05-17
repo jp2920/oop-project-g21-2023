@@ -1,0 +1,19 @@
+#ifndef UMPIREUNITTEST_H
+#define UMPIREUNITTEST_H
+
+#include <iostream>
+
+class UmpireUnitTest : public Umpire{
+    public: 
+        void runTests() { 
+            testUmpire(); 
+        }      
+    
+    private: 
+        void test () {} {
+
+        };     
+
+};
+
+#endif // UMPIREUNITTEST_H //

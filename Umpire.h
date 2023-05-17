@@ -17,5 +17,9 @@ class Umpire : public Person {
         void announceScore(); 
         void announceWinner(); 
 
-
-}
+    // METHODS
+        int get_serverScore();
+        void set_serverScore(int serverScore);
+        int get_receiverScore();
+        void set_receiverScore(int receiverScore);
+};
