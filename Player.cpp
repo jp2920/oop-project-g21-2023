@@ -17,6 +17,7 @@ int Player::getPower() {
 
 void Player::setRawSpeed(int rawSpeed) {
     this->rawSpeed = rawSpeed;
+    this->actualSpeed = 2*rawSpeed;
 }
 
 int Player::getRawSpeed() {
@@ -46,5 +47,5 @@ void Player:: print(){
     cout << "Weight: " << getWeight() << endl;
     cout << "Power: " << getPower() << endl;
     cout << "Speed: " << getActualSpeed() << endl;
-    cout << "Current Score: " << getRoundScore() << endl;
+    cout << "Current Score: " << getRoundScore() << endl << endl;
 }

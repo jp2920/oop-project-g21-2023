@@ -43,5 +43,5 @@ void Server:: print(){
     cout << "Speed: " << getActualSpeed() << endl;
     cout << "Current Score: " << getRoundScore() << endl;
     cout << "Serving: " << getServingAbility() << endl;
-    cout << "Luck: " << getLuck() << endl;
+    cout << "Luck: " << getLuck() << endl << endl;
 }

@@ -60,5 +60,5 @@ void Person:: print(){
     cout << "Name: " << getName() << endl;
     cout << "ID: " << getID() << endl;
     cout << "Age: "<< getAge() << endl;
-    cout << "Weight: " << getWeight() << endl;
+    cout << "Weight: " << getWeight() << endl << endl;
 }
