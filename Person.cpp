@@ -57,8 +57,8 @@ float Person::getWeight() {
 }
 
 void Person:: print(){
-    cout << getName() << endl;
-    cout << getID() << endl;
-    cout << getAge() << endl;
-    cout << getWeight() << endl;
+    cout << "Name: " << getName() << endl;
+    cout << "ID: " << getID() << endl;
+    cout << "Age: "<< getAge() << endl;
+    cout << "Weight: " << getWeight() << endl;
 }
