@@ -5,7 +5,7 @@
 
 class UmpireUnitTest {
     private: 
-        void testUmpire
+        void testUmpire ()
     public: 
         void runTests() { 
             testUmpire(); 
