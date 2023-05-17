@@ -40,11 +40,11 @@ int Player::getRoundScore() {
 }
 
 void Player:: print(){
-    cout << getName() << endl;
-    cout << getID() << endl;
-    cout << getAge() << endl;
-    cout << getWeight() << endl;
-    cout << getPower() << endl;
-    cout << getActualSpeed() << endl;
-    cout << getRoundScore() << endl;
+    cout << "Name: " << getName() << endl;
+    cout << "ID: " << getID() << endl;
+    cout << "Age: " << getAge() << endl;
+    cout << "Weight: " << getWeight() << endl;
+    cout << "Power: " << getPower() << endl;
+    cout << "Speed: " << getActualSpeed() << endl;
+    cout << "Current Score: " << getRoundScore() << endl;
 }

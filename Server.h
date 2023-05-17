@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include <cstdlib>
+#include <time.h>
 
 class Server : public Player {
 private:
@@ -10,7 +11,7 @@ private:
     int luck;
 
 public:
-    Server(string name, int ID, int age, float weight, int power, int rawSpeed, float actualSpeed, int roundScore, int servingAbility);
+    Server(string name, int ID, int age, float weight, int power, int rawSpeed, int servingAbility);
     Server();
 
     void setServingAbility(int servingAbility);
