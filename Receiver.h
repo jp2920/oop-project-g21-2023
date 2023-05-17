@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include <cstdlib>
+#include <time.h>
 
 class Receiver : public Player {
 private:
@@ -10,7 +11,7 @@ private:
     int luck;
 
 public:
-    Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, float actualSpeed, int roundScore, int receivingAbility);
+    Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, int receivingAbility);
     Receiver();
     ~Receiver();
 
@@ -19,6 +20,8 @@ public:
 
     int getLuck();
     void setLuck();
+
+    void print();
 };
 
 #endif /* RECEIVER_H */

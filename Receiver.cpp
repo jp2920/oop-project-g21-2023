@@ -1,10 +1,13 @@
 #include "Receiver.h"
 
-Receiver::Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, float actualSpeed, int roundScore, int receivingAbility)
-    : Player(name, ID, age, weight, power, rawSpeed, actualSpeed, roundScore), receivingAbility(receivingAbility)
+Receiver::Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, int receivingAbility)
+    : Player(name, ID, age, weight, power, rawSpeed), receivingAbility(receivingAbility)
 {
-    // initialize luck with a random integer between 5 and 8
-    luck = rand() % 4 + 5;
+ // Seed the random number generator using the current time
+    srand(time(nullptr));
+    // Generate a random integer between 0 and RAND_MAX
+    int random_int = rand();
+    luck = random_int % 4 + 5;
 }
 
 Receiver::Receiver() : Player(), receivingAbility(0), luck(0) {}
@@ -24,6 +27,22 @@ int Receiver::getLuck() {
 }
 
 void Receiver::setLuck(){
-    int newLuck = rand() % 4 + 5;
+    // Seed the random number generator using the current time
+    srand(time(nullptr));
+    // Generate a random integer between 0 and RAND_MAX
+    int random_int = rand();
+    int newLuck = random_int % 4 + 5;
     this->luck = newLuck;
+}
+
+void Receiver:: print(){
+    cout << "Name: " << getName() << endl;
+    cout << "ID: " << getID() << endl;
+    cout << "Age: " << getAge() << endl;
+    cout << "Weight: " << getWeight() << endl;
+    cout << "Power: " << getPower() << endl;
+    cout << "Speed: " << getActualSpeed() << endl;
+    cout << "Current Score: " << getRoundScore() << endl;
+    cout << "Receiving: " << getReceivingAbility() << endl;
+    cout << "Luck: " << getLuck() << endl;
 }

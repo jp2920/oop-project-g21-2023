@@ -1,10 +1,14 @@
 #include "Server.h"
 
-Server::Server(string name, int ID, int age, float weight, int power, int rawSpeed, float actualSpeed, int roundScore, int servingAbility)
-    : Player(name, ID, age, weight, power, rawSpeed, actualSpeed, roundScore), servingAbility(servingAbility)
+
+Server::Server(string name, int ID, int age, float weight, int power, int rawSpeed, int servingAbility)
+    : Player(name, ID, age, weight, power, rawSpeed), servingAbility(servingAbility)
 {
-    // initialize luck with a random integer between 5 and 10
-    luck = rand() % 6 + 5;
+    // Seed the random number generator using the current time
+    srand(time(nullptr));
+    // Generate a random integer between 0 and RAND_MAX
+    int random_int = rand();
+    luck = random_int % 6 + 5;
 }
 
 Server::Server() : Player(), servingAbility(0), luck(0) {}
@@ -22,18 +26,22 @@ int Server::getLuck() {
 }
 
 void Server::setLuck(){
-    int newLuck = rand() % 6 +5;
+    // Seed the random number generator using the current time
+    srand(time(nullptr));
+    // Generate a random integer between 0 and RAND_MAX
+    int random_int = rand();
+    int newLuck = random_int % 6 + 5;
     this->luck = newLuck;
 }
 
 void Server:: print(){
-    cout << getName() << endl;
-    cout << getID() << endl;
-    cout << getAge() << endl;
-    cout << getWeight() << endl;
-    cout << getPower() << endl;
-    cout << getActualSpeed() << endl;
-    cout << getRoundScore() << endl;
-    cout << getServingAbility() << endl;
-    cout << getLuck() << endl;
+    cout << "Name: " << getName() << endl;
+    cout << "ID: " << getID() << endl;
+    cout << "Age: " << getAge() << endl;
+    cout << "Weight: " << getWeight() << endl;
+    cout << "Power: " << getPower() << endl;
+    cout << "Speed: " << getActualSpeed() << endl;
+    cout << "Current Score: " << getRoundScore() << endl;
+    cout << "Serving: " << getServingAbility() << endl;
+    cout << "Luck: " << getLuck() << endl;
 }
