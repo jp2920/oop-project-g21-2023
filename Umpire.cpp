@@ -16,26 +16,28 @@ Umpire :: Umpire() {
     this->receiverScore = 0; 
 }
 
-// Destuctor
-Umpire :: ~Umpire() {}
-
-// 
 
 // Anounces the winner of the point
 void Umpire :: announcePoint() {
+    // Calculate the winner of the point taking in all the stats
+
+
+
+
     // compare the two players scores
-    cout << "Winner of the point: " <<;
+    cout << "Winner of the point: " << endl;
 
 
 }
 
 //Annocunces the current score
-void announceScores() {
+void Umpire :: announceScore() {
 
 }; 
 
 //Announces the winner of the game
-void announceWinner() {
+void Umpire :: announceWinner() {
+
     if (serverScore > receiverScore) {
         
         
@@ -48,14 +50,14 @@ int Umpire :: get_serverScore() {
 }
 
 void Umpire :: set_serverScore(int serverScore) {
-    serverScore = serverScore;
+    this->serverScore = serverScore;
 }
 
-int get_receiverScore() {
+int Umpire :: get_receiverScore() {
     return receiverScore;
 }
 
-void set_receiverScore(int receiverScore) {
+void Umpire :: set_receiverScore(int receiverScore) {
     receiverScore = receiverScore;
 }
 

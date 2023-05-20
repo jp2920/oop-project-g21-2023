@@ -10,7 +10,6 @@ class Umpire : public Person {
     // CONSTRUCTORS
         Umpire(int serverScore, int receiverScore);
         Umpire();
-        ~Umpire();
 
     // FUNCTIONS
         void announcePoint(); 
