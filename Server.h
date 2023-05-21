@@ -9,9 +9,10 @@ class Server : public Player {
 private:
     int servingAbility;
     int luck;
+    int roundScore;
 
 public:
-    Server(string name, int ID, int age, float weight, int power, int rawSpeed, int servingAbility);
+    Server(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility, int servingAbility);
     Server();
 
     void setServingAbility(int servingAbility);
@@ -21,6 +22,9 @@ public:
     int getLuck();
 
     void print();
+
+    void setRoundScore(int roundScore);
+    int getRoundScore();
     
 };
 

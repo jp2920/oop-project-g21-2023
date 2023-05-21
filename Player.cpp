@@ -1,9 +1,9 @@
 #include "Player.h"
 
-Player::Player(string name, int ID, int age, float weight, int power, int rawSpeed)
-    : Person(name, ID, age, weight), power(power), rawSpeed(rawSpeed), actualSpeed(2*rawSpeed), roundScore(0) {}
+Player::Player(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility)
+    : Person(name, ID, age, weight), power(power), rawSpeed(rawSpeed), actualSpeed(2*rawSpeed), rallyingAbility(rallyingAbility){}
 
-Player::Player() : Person(), power(0), rawSpeed(0), actualSpeed(0.0), roundScore(0) {}
+Player::Player() : Person(), power(0), rawSpeed(0), actualSpeed(0.0), rallyingAbility(0){}
 
 Player::~Player() {}
 
@@ -24,21 +24,24 @@ int Player::getRawSpeed() {
     return rawSpeed;
 }
 
-void Player::setActualSpeed(float actualSpeed) {
+//Removed the setter for this variable as it is calculated from other stats
+/*void Player::setActualSpeed(float actualSpeed) {
     this->actualSpeed = actualSpeed;
-}
+}*/ 
 
 float Player::getActualSpeed() {
     return actualSpeed;
 }
 
-void Player::setRoundScore(int roundScore) {
-    this->roundScore = roundScore;
+int Player::getRallyingAbility() {
+    return rallyingAbility;
 }
 
-int Player::getRoundScore() {
-    return roundScore;
+void Player::setRallyingAbility(int rallyingAbility) {
+    this->rallyingAbility = rallyingAbility;
 }
+
+ 
 
 void Player:: print(){
     cout << "Name: " << getName() << endl;
@@ -47,5 +50,4 @@ void Player:: print(){
     cout << "Weight: " << getWeight() << endl;
     cout << "Power: " << getPower() << endl;
     cout << "Speed: " << getActualSpeed() << endl;
-    cout << "Current Score: " << getRoundScore() << endl << endl;
 }

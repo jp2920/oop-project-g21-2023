@@ -20,8 +20,6 @@ int main(){
     Receiver Des("Desmond", 1824351, 20, 69.5, 6, 8, 8);
     Des.print();
 
-    Jonty.setRoundScore(6);
-    Des.setRoundScore(5);
 
 
     float x = Jonty.getRoundScore();

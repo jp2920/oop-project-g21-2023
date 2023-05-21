@@ -9,10 +9,10 @@ private:
     int power;
     int rawSpeed;
     float actualSpeed;
-    int roundScore;
+    int rallyingAbility;
 
 public:
-    Player(string name, int ID, int age, float weight, int power, int rawSpeed);
+    Player(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility);
     Player();
     ~Player();
 
@@ -25,8 +25,8 @@ public:
     void setActualSpeed(float actualSpeed);
     float getActualSpeed();
 
-    void setRoundScore(int roundScore);
-    int getRoundScore();
+    void setRallyingAbility(int rallyingAbility);
+    int getRallyingAbility();
 
     void print();
 };
