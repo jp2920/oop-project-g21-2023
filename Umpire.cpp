@@ -1,11 +1,14 @@
 #include <iostream>
-
 #include "Umpire.h"
+#include "Person.h"
+#include "Player.h"
+#include "Server.h"
+#include "Receiver.h"
 
 using namespace std;
 
 // Constructor
-Umpire :: Umpire(int serverScore, int receiverScore,int serverPoints, int receiverPoints) {
+Umpire :: Umpire(float serverScore, float receiverScore,int serverPoints, int receiverPoints) {
     this->serverScore = serverScore; 
     this->receiverScore = receiverScore;
     this->serverPoints = serverPoints;
@@ -49,19 +52,19 @@ void Umpire :: announceWinner(string receiverName, string serverName) {
 }; 
 
 // GETTERS AND SETTERS 
-int Umpire :: get_serverScore() {
+float Umpire :: get_serverScore() {
     return serverScore;
 }
 
-void Umpire :: set_serverScore(int serverScore) {
+void Umpire :: set_serverScore(float serverScore) {
     this->serverScore = serverScore;
 }
 
-int Umpire :: get_receiverScore() {
+float Umpire :: get_receiverScore() {
     return receiverScore;
 }
 
-void Umpire :: set_receiverScore(int receiverScore) {
+void Umpire :: set_receiverScore(float receiverScore) {
     receiverScore = receiverScore;
 }
 
