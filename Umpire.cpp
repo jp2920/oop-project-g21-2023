@@ -5,15 +5,19 @@
 using namespace std;
 
 // Constructor
-Umpire :: Umpire(int serverScore, int receiverScore) {
+Umpire :: Umpire(int serverScore, int receiverScore,int serverPoints, int receiverPoints) {
     this->serverScore = serverScore; 
     this->receiverScore = receiverScore;
+    this->serverPoints = serverPoints;
+    this->receiverPoints = receiverPoints;
 }
 
 // Default constructor
 Umpire :: Umpire() {
     this->serverScore = 0;
     this->receiverScore = 0; 
+    this->serverPoints = 0;
+    this->receiverPoints = 0;
 }
 
 

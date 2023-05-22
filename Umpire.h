@@ -5,10 +5,13 @@ class Umpire : public Person {
     // DATA MEMBERS
         int serverScore;
         int receiverScore;
+        int serverPoints; 
+        int receiverPoints;
+
 
     public:
     // CONSTRUCTORS
-        Umpire(int serverScore, int receiverScore);
+        Umpire(int serverScore, int receiverScore, int serverPoints, int receiverPoints);
         Umpire();
 
     // FUNCTIONS
