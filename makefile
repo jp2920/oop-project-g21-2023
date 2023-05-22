@@ -25,7 +25,7 @@ Umpire.o: Umpire.cpp Umpire.h
 git:
 	git add .
 	git commit -m "commit"
-	git push -u origin master
+	git push
 
 clean: 
 	rm *.o
