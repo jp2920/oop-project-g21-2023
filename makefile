@@ -22,6 +22,11 @@ Server.o: Server.h Server.cpp
 Umpire.o: Umpire.cpp Umpire.h 
 	g++ Umpire.cpp Umpire.h 
 
+git:
+	git add .
+	git commit -m "commit"
+	git push -u origin master
+
 clean: 
 	rm *.o
 
