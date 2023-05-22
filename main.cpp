@@ -27,7 +27,7 @@ int main(){
     Jonty.setServingAbility(9);
     Jonty.setLuck();
     
-   this_thread::sleep_for(chrono::milliseconds(150));
+    this_thread::sleep_for(chrono::milliseconds(150));
 
     Receiver Des;
     Des.setName("Des");
