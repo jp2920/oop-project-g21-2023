@@ -12,9 +12,9 @@ class Umpire : public Person {
         Umpire();
 
     // FUNCTIONS
-        void announcePoint(); 
+        void announcePoint(float receiver_score, float servers_score); 
         void announceScore(); 
-        void announceWinner(); 
+        void announceWinner(string serverName, string receiverName); 
 
     // METHODS
         int get_serverScore();

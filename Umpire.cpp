@@ -18,29 +18,28 @@ Umpire :: Umpire() {
 
 
 // Anounces the winner of the point
-void Umpire :: announcePoint() {
+void Umpire :: announcePoint(float receiver_score, float server_score) {
     // Calculate the winner of the point taking in all the stats
-    
-
-
-
-    // compare the two players scores
-    cout << "Winner of the point: " << endl;
-
-
+    if (receiver_score > server_score) {
+        // compare the two players scores
+        cout << "Winner of the point is " << receiver_score << endl;
+    }  else {
+        cout << "Winner of the point is " << server_score << endl;
+    }
 }
 
 //Annocunces the current score
 void Umpire :: announceScore() {
+    cout << "The score is " << endl;
 
 }; 
 
 //Announces the winner of the game
-void Umpire :: announceWinner() {
-
-    if (serverScore > receiverScore) {
-        
-        
+void Umpire :: announceWinner(string receiverName, string serverName ) {
+    if (serverScore > 40) { 
+        cout << "The winner of the match is " << receiverName << endl;
+    } else {
+        cout << "The winner of the match is " << serverName << endl;
     }
 }; 
 
