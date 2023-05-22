@@ -17,7 +17,8 @@ int Player::getPower() {
 
 void Player::setRawSpeed(int rawSpeed) {
     this->rawSpeed = rawSpeed;
-    this->actualSpeed = 2*rawSpeed;
+    this->actualSpeed = rawSpeed / (getAge() + getWeight());
+    this-> actualSpeed = (actualSpeed > 10) ? 10 : actualSpeed;
 }
 
 int Player::getRawSpeed() {
@@ -50,4 +51,5 @@ void Player:: print(){
     cout << "Weight: " << getWeight() << endl;
     cout << "Power: " << getPower() << endl;
     cout << "Speed: " << getActualSpeed() << endl;
+    cout << "Rallying: " << getRallyingAbility() << endl;
 }

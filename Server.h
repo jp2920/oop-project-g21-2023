@@ -8,8 +8,8 @@
 class Server : public Player {
 private:
     int servingAbility;
-    int luck;
-    int roundScore;
+    float luck;
+    float roundScore;
 
 public:
     Server(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility, int servingAbility);
@@ -19,12 +19,14 @@ public:
     int getServingAbility();
 
     void setLuck();
-    int getLuck();
+    float getLuck();
 
     void print();
 
-    void setRoundScore(int roundScore);
-    int getRoundScore();
+    void setRoundScore(float roundScore);
+    float getRoundScore();
+
+    void play();
     
 };
 

@@ -1,13 +1,7 @@
 #include "Receiver.h"
 
 Receiver::Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility, int receivingAbility)
-    : Player(name, ID, age, weight, power, rawSpeed, rallyingAbility), receivingAbility(receivingAbility), roundScore(0)
-{
- // Seed the random number generator using the current time
-    srand(time(nullptr));
-    // Generate a random integer between 0 and RAND_MAX
-    int random_int = rand();
-    luck = random_int % 4 + 5;
+    : Player(name, ID, age, weight, power, rawSpeed, rallyingAbility), receivingAbility(receivingAbility), roundScore(0){
 }
 
 Receiver::Receiver() : Player(), receivingAbility(0), luck(0), roundScore(0) {}
@@ -22,24 +16,28 @@ int Receiver::getReceivingAbility() {
     return receivingAbility;
 }
 
-int Receiver::getLuck() {
+float Receiver::getLuck() {
     return luck;
 }
 
 void Receiver::setLuck(){
-    // Seed the random number generator using the current time
-    srand(time(nullptr));
-    // Generate a random integer between 0 and RAND_MAX
+  
+    //Generate a random integer between 4 and 7 and save this to newLuck
     int random_int = rand();
-    int newLuck = random_int % 4 + 5;
-    this->luck = newLuck;
+    int newLuck = random_int % 4 + 4;
+  
+
+     
+    // Generate a random float between 0 and 1
+    float random_float = static_cast<float>(rand()) / RAND_MAX;
+    this->luck = newLuck + random_float;
 }
 
-void Receiver::setRoundScore(int roundScore) {
+void Receiver::setRoundScore(float roundScore) {
     this->roundScore = roundScore;
 }
 
-int Receiver::getRoundScore() {
+float Receiver::getRoundScore() {
     return roundScore;
 }
 
@@ -50,8 +48,14 @@ void Receiver:: print(){
     cout << "Weight: " << getWeight() << endl;
     cout << "Power: " << getPower() << endl;
     cout << "Speed: " << getActualSpeed() << endl;
-    cout << "Current Score: " << getRoundScore() << endl;
+    cout << "Rallying: " << getRallyingAbility() << endl;
     cout << "Receiving: " << getReceivingAbility() << endl;
     cout << "Luck: " << getLuck() << endl;
     cout << "Current Score: " << getRoundScore() << endl << endl;
+}
+
+void Receiver:: play(){
+    float score = getPower() + getActualSpeed() + getRallyingAbility() + getReceivingAbility() + getLuck();
+    setRoundScore(score);
+    setLuck();
 }

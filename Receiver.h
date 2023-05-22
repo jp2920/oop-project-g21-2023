@@ -8,8 +8,8 @@
 class Receiver : public Player {
 private:
     int receivingAbility;
-    int luck;
-    int roundScore;
+    float luck;
+    float roundScore;
 
 public:
     Receiver(string name, int ID, int age, float weight, int power, int rawSpeed, int rallyingAbility, int receivingAbility);
@@ -19,13 +19,15 @@ public:
     void setReceivingAbility(int receivingAbility);
     int getReceivingAbility();
 
-    int getLuck();
+    float getLuck();
     void setLuck();
 
     void print();
 
-    void setRoundScore(int roundScore);
-    int getRoundScore();
+    void setRoundScore(float roundScore);
+    float getRoundScore();
+
+    void play();
 };
 
 #endif /* RECEIVER_H */
