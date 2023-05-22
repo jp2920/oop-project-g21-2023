@@ -4,6 +4,8 @@
 #include <cstdlib>
 #include <chrono>
 #include <thread>
+#include <fstream> 
+
 
 #include "Printable.h"
 #include "Person.h"
@@ -17,10 +19,33 @@ using namespace std;
 int main(){
 
     // Read in the read me file
+
+    string file_path = "/home/pretoriusjo/oop-project-g21-2023/README.md";
+
+    // Create an input file stream
+    ifstream file(file_path);
+
+    // Check if the file exists and can be opened
+    if (file.is_open()) {
+        string line;
+
+        // Read and print each line of the file
+        while (getline(file, line)) {
+            cout << line << endl;
+        }
+
+        // Close the file stream
+        file.close();
+
+    } else {
+        cout << "Failed to open the file." << endl;
+    }
+
+
     //Seed the random number generator using the current time
     srand(time(nullptr));
     
-    Umpire umpire; 
+    Umpire umpire;  
 
     // Server input
     Server server;
@@ -75,7 +100,6 @@ int main(){
 
     /* Receiver input */
     Receiver receiver;
-
 
     cout << "What is the receiver's name?\n";  
     string nameReceiver; 
@@ -139,6 +163,7 @@ int main(){
     }
     
     cout << "Thanks for playing!" << endl;
+
 
 
     return 0;

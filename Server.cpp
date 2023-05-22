@@ -7,7 +7,9 @@ Server::Server(string name, int ID, int age, float weight, int power, int rawSpe
 
 Server::Server() : Player(), servingAbility(0), luck(0), roundScore(0) {}
 
-Server::~Server(){}
+Server::~Server()   {
+    
+}
 
 //Setter and Getter Methods
 void Server::setServingAbility(int servingAbility) {

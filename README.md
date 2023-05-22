@@ -29,7 +29,4 @@ Receiving ability: How well the receiver can return a serve out of 10 (1 to 10).
 
 Serving ability: How well the server can serve to the opponent out of 10 (1 to 10).
 
-
-
-
-
+Now enter your stats for the two players below
