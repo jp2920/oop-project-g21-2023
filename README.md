@@ -1,2 +1,2 @@
-# oop-project-g21-2023
+## Tennis simulation
 
