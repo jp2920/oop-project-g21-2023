@@ -56,6 +56,8 @@ float Person::getWeight() {
     return weight;
 }
 
+//This will override the virtual print() method and will print data members 
+//for a Person object
 void Person:: print(){
     cout << "Name: " << getName() << endl;
     cout << "ID: " << getID() << endl;
