@@ -18,6 +18,7 @@ private:
     int ID;
     int age;
     float weight;
+    
 public:
     Person(string name, int ID, int age, float weight); //full constructor
     Person();       //default constructor

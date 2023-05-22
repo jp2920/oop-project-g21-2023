@@ -20,15 +20,27 @@ int main(){
     
     Umpire U; 
 
-    Server Jonty;
-    Jonty.setName("Jonty");
-    Jonty.setAge(25);
-    Jonty.setWeight(80);
-    Jonty.setPower(8);
-    Jonty.setRawSpeed(800);
-    Jonty.setRallyingAbility(7);
-    Jonty.setServingAbility(10);
-    Jonty.setLuck();
+    // Server input
+    Server server;
+
+    cout << "What is the Server's name?\n";  
+    string name; 
+    cin >> name;
+    server.setName(name);
+
+    //enter the age
+    cout << "What is the Server's Age\n";
+    int age;
+    cin >> age;
+    server.setAge(age);
+
+
+    server.setWeight(80);
+    server.setPower(8);
+    server.setRawSpeed(800);
+    server.setRallyingAbility(7);
+    server.setServingAbility(10);
+    server.setLuck();
     
     this_thread::sleep_for(chrono::milliseconds(150));
 
@@ -42,17 +54,18 @@ int main(){
     Des.setReceivingAbility(8);
     Des.setLuck();
    
-    cout << Jonty.getRoundScore() << endl;
+    cout << server.getRoundScore() << endl;
     cout << Des.getRoundScore() << endl;
 
     int x = 1;
+
     while (x == 1){
-        U.serve(Jonty);
+        U.serve(server);
         this_thread::sleep_for(chrono::milliseconds(800));
         U.receive(Des);
 
-        U.givePoints(Jonty, Des);
-        x = U.checkWinner(Jonty, Des);
+        U.givePoints(server, Des);
+        x = U.checkWinner(server, Des);
         U.announcePoints();
     }
     
