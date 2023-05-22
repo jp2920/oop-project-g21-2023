@@ -26,13 +26,13 @@ void Receiver::setLuck(){
     //This setLuck function is identical to the one found in the Server 
     //class except the range of values will be between 4 and 8 instead
     //of between 5 and 10 (Servers advantage)
-    //Generate a random integer between 4 and 7 and save this to newLuck
+    //Generate a random integer between 4 and 13 and save this to newLuck
     int random_int = rand();
-    int newLuck = random_int % 4 + 4;
+    int newLuck = random_int % 10 + 4;
 
     // Generate a random float between 0 and 1
-    float random_float = static_cast<float>(rand()) / RAND_MAX;
-    this->luck = newLuck + random_float; //sum them to get luck
+    //float random_float = static_cast<float>(rand()) / RAND_MAX;
+    this->luck = newLuck; //+ random_float; //sum them to get luck
 }
 
 void Receiver::setRoundScore(float roundScore) {
