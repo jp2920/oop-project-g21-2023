@@ -18,14 +18,21 @@ class Umpire : public Person {
         Umpire(float serverScore, float receiverScore, int serverPoints, int receiverPoints);
         Umpire();
 
-    // FUNCTIONS
-        void announcePoint(float receiver_score, float servers_score); 
-        void announceScore(); 
-        void announceWinner(string serverName, string receiverName); 
-
-    // METHODS
+    // GETTER AND SETTER METHODS
         float get_serverScore();
-        void set_serverScore(float serverScore);
+        void set_serverScore(float roundScore);
         float get_receiverScore();
-        void set_receiverScore(float receiverScore);
+        void set_receiverScore(float roundScore);
+        int get_serverPoints();
+        void set_serverPoints(int points);
+        int get_receiverPoints();
+        void set_receiverPoints(int points);
+
+     // FUNCTIONS
+        void checkWinner();
+        void serve(Server& S);
+        void receive(Receiver& R);
+        void announcePoint(); 
+        //void announceScore(); 
+       
 };
