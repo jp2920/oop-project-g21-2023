@@ -7,13 +7,10 @@
 class UmpireUnitTest : public Umpire{
     public: 
         void runTests() { 
-            testUmpire(); 
         }      
     
     private: 
-        void test () {} {
-
-        };     
+        void test () {} ;     
 
 };
 
