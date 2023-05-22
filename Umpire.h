@@ -29,10 +29,11 @@ class Umpire : public Person {
         void set_receiverPoints(int points);
 
      // FUNCTIONS
-        void checkWinner();
         void serve(Server& S);
         void receive(Receiver& R);
-        void announcePoint(); 
-        //void announceScore(); 
+        void givePoints(Server& S, Receiver& R);
+        void announcePoints(); 
+        int checkWinner(Server& S, Receiver& R);
+        
        
 };

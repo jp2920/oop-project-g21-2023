@@ -25,14 +25,14 @@ float Server::getLuck() {
 void Server::setLuck(){
     //The variable luck is random instead of being given by the user
     //Note that the random number generator has been seeded to current time
-    //Generate a random integer between 5 and 9 and save this to newLuck
+    //Generate a random integer between 5 and 14 and save this to newLuck
     int random_int = rand();
-    int newLuck = random_int % 5 + 5;
+    int newLuck = random_int % 10 + 5;
    
     // Generate a random float between 0 and 1
-    float random_float = static_cast<float>(rand()) / RAND_MAX;
+    //float random_float = static_cast<float>(rand()) / RAND_MAX;
     //Luck is the sum of these 2 random values
-    this->luck = newLuck + random_float;
+    this->luck = newLuck; //+ random_float;
 }
 
 void Server::setRoundScore(float roundScore) {
