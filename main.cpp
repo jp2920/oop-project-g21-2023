@@ -17,8 +17,6 @@ using namespace std;
 int main(){
 
     // Read in the read me file
-    
-
     //Seed the random number generator using the current time
     srand(time(nullptr));
     
