@@ -14,7 +14,6 @@
 using namespace std;
 
 int main(){
-
     //Seed the random number generator using the current time
     srand(time(nullptr));
     
@@ -46,12 +45,6 @@ int main(){
 
     Des.play();
     Des.print();
-
-
-
-   
-  
-
 
     return 0;
 }
