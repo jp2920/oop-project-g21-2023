@@ -39,7 +39,8 @@ void Umpire :: announceScore() {
 }; 
 
 //Announces the winner of the game
-void Umpire :: announceWinner(string receiverName, string serverName ) {
+void Umpire :: announceWinner(string receiverName, string serverName) {
+    
     if (serverScore > 40) { 
         cout << "The winner of the match is " << receiverName << endl;
     } else {
