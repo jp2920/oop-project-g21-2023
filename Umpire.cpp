@@ -20,7 +20,7 @@ Umpire :: Umpire() {
 // Anounces the winner of the point
 void Umpire :: announcePoint() {
     // Calculate the winner of the point taking in all the stats
-
+    
 
 
 
