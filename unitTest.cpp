@@ -1,7 +1,9 @@
 #include "umpireUnitTest.h"
 
 int main() {
-    UmpireUnitTest umpireTest; 
+    UnitTest umpireTest; 
+
+
 
     umpireTest.runUmpireTests();
 
