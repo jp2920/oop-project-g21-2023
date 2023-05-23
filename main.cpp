@@ -163,6 +163,8 @@ int main(){
 
     cout << "Thanks for playing!" << endl;
 
+    umpire.printScoreboard();
+
 
     return 0;
 }
