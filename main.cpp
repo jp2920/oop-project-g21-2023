@@ -17,7 +17,7 @@ using namespace std;
 
 int main(){
 
-    // Read in the read me file
+    /*/ Read in the read me file
 
 
     // path to the file
@@ -25,7 +25,7 @@ int main(){
 
     // Create an input file stream
     ifstream file(file_path);
-
+    
     // Check if the file exists and can be opened
     if (file.is_open()) {
         string line;
@@ -40,6 +40,7 @@ int main(){
     } else {
         cout << "Failure to open the file" << endl;
     }
+    */
 
     //Seed the random number generator using the current time
     srand(time(nullptr));
@@ -55,37 +56,37 @@ int main(){
     server.setName(name);
 
     //enter the age
-    cout << "What is the server's Age\n";
+    cout << "What is the server's Age?\n";
     int age;
     cin >> age;
     server.setAge(age);
 
     // enter weight
-    cout << "What is the Server's weight\n"; 
+    cout << "What is the Server's weight?\n"; 
     int weight;
     cin >> weight;
     server.setWeight(weight);
 
     // enter power
-    cout << "What is the Server's power\n"; 
+    cout << "What is the Server's power?\n"; 
     int power;
     cin >> power;
     server.setPower(power);
 
     // enter speed
-    cout << "What is the Server's speed\n"; 
+    cout << "What is the Server's speed?\n"; 
     int speed;
     cin >> speed;
     server.setRawSpeed(speed);
 
     // enter rallying ability
-    cout << "What is the Server's rallying ability\n"; 
+    cout << "What is the Server's rallying ability?\n"; 
     int rallyingAbility;
     cin >> rallyingAbility;
     server.setRallyingAbility(rallyingAbility);
 
     // enter serving ability
-    cout << "What is the Server's serving ability\n"; 
+    cout << "What is the Server's serving ability?\n"; 
     int servingAbility;
     cin >> servingAbility;   
     server.setServingAbility(servingAbility);
@@ -99,45 +100,43 @@ int main(){
 
     /* Receiver input */
     Receiver receiver;
-
-
     cout << "What is the receiver's name?\n";  
     string nameReceiver; 
     cin >> nameReceiver;
     receiver.setName(nameReceiver);
 
     //enter the age
-    cout << "What is the receiver's Age\n";
+    cout << "What is the receiver's age?\n";
     int ageReceiver;
     cin >> ageReceiver;
     receiver.setAge(ageReceiver);
 
     // enter weight
-    cout << "What is the receiver's weight\n"; 
+    cout << "What is the receiver's weight?\n"; 
     int weightReceiver;
     cin >> weightReceiver;
     receiver.setWeight(weightReceiver);
 
     // enter power
-    cout << "What is the receiver's power\n"; 
+    cout << "What is the receiver's power?\n"; 
     int powerReceiver;
     cin >> powerReceiver;
     receiver.setPower(powerReceiver);
 
     // enter speed
-    cout << "What is the receiver's speed\n"; 
+    cout << "What is the receiver's speed?\n"; 
     int speedReceiver;
     cin >> speedReceiver;
     receiver.setRawSpeed(speedReceiver);
 
     // enter rallying ability
-    cout << "What is the receiver's rallying ability\n"; 
+    cout << "What is the receiver's rallying ability?\n"; 
     int rallyingAbilityReceiver;
     cin >> rallyingAbilityReceiver;
     receiver.setRallyingAbility(rallyingAbilityReceiver);
 
     // enter receiving ability
-    cout << "What is the receiver's receiving ability\n"; 
+    cout << "What is the receiver's receiving ability?\n"; 
     int receivingAbility;
     cin >> receivingAbility;   
     receiver.setReceivingAbility(receivingAbility);
@@ -146,7 +145,7 @@ int main(){
 
     // Starting score for the game
     cout << "The Server's score is: " << server.getRoundScore() << endl;
-    cout << "The Server's score is: " << receiver.getRoundScore() << endl;
+    cout << "The Receiver's score is: " << receiver.getRoundScore() << endl;
 
     int x = 1;
 
