@@ -1,6 +1,6 @@
 # Tennis simulation - Group 21
 
-##### Jonty Pretorius - a1823986 and Desmond Rowland - a182
+##### Jonty Pretorius - a1823986 and Desmond Rowland - a1824351
 ## Our Simulation: 
 This simulation is between two tennis players that can be inputted by the user.
 The idea is to determine who would be the best tennis player out of the two simulated players
@@ -9,7 +9,6 @@ The idea is to determine who would be the best tennis player out of the two simu
 ## Instructions: 
 1. Enter the name of the player and the stats of the player that are prompted.
 2. This will then calculate the winner of each point and display the winner out of the two players.
-3. 
 
 
 ## Stats you will need to enter
@@ -29,4 +28,4 @@ Receiving ability: How well the receiver can return a serve out of 10 (1 to 10).
 
 Serving ability: How well the server can serve to the opponent out of 10 (1 to 10).
 
-Now enter your stats for the two players below
+Now follow the prompts and enter your stats for the two players below:
