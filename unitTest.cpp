@@ -3,7 +3,9 @@
 int main() {
     UnitTest umpireTest; 
 
+    umpireTest.runPlayerTests();
 
+    umpireTest.runReceiverTests();
 
     umpireTest.runUmpireTests();
 
