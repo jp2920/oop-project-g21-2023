@@ -4,6 +4,10 @@
 #include "Server.h"
 #include "Receiver.h"
 
+#include <string>
+
+
+
 class Umpire : public Person {
     private: 
     // DATA MEMBERS
@@ -11,12 +15,16 @@ class Umpire : public Person {
         float receiverScore;
         int serverPoints; 
         int receiverPoints;
+        std::string* scoreboard;    //dynamic array to hold scores
+        int capacity;               //capacity of array
+        int size;                   //number of elements in array  
 
 
     public:
     // CONSTRUCTORS
         Umpire(float serverScore, float receiverScore, int serverPoints, int receiverPoints);
         Umpire();
+        ~Umpire();
 
     // GETTER AND SETTER METHODS
         float get_serverScore();
@@ -34,6 +42,8 @@ class Umpire : public Person {
         void givePoints(Server& S, Receiver& R);
         void announcePoints(); 
         int checkWinner(Server& S, Receiver& R);
+        void addScore(const string& score);
+        void printScoreboard();
         
        
 };

@@ -1,6 +1,9 @@
 compile: Printable.o Person.o Player.o Receiver.o Server.o Umpire.o main.o 
 	g++ Printable.o Person.o Player.o Receiver.o Server.o Umpire.o main.o -o main
 
+UnitTest: Printable.o Person.o Player.o Receiver.o Server.o Umpire.o UnitTest.o
+	g++ Printable.o Person.o Player.o Receiver.o Server.o Umpire.o UnitTest.o -o unitTest
+
 main.o: main.cpp 
 	g++ -c main.cpp
 
@@ -22,6 +25,9 @@ Server.o: Server.h Server.cpp
 Umpire.o: Umpire.cpp Umpire.h 
 	g++ -c Umpire.cpp Umpire.h 
 
+UnitTest.o: unitTest.cpp umpireUnitTest.h
+	g++ -c unitTest.cpp umpireUnitTest.h 
+
 git:
 	git add .
 	git commit -m "commit"
@@ -29,6 +35,7 @@ git:
 
 clean: 
 	rm *.o
+
 
 
 

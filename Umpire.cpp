@@ -8,100 +8,105 @@
 using namespace std;
 
 // Constructor
-Umpire :: Umpire(float serverScore, float receiverScore,int serverPoints, int receiverPoints) {
-    this->serverScore = serverScore; 
+Umpire::Umpire(float serverScore, float receiverScore, int serverPoints, int receiverPoints) {
+    this->serverScore = serverScore;
     this->receiverScore = receiverScore;
     this->serverPoints = serverPoints;
     this->receiverPoints = receiverPoints;
+    scoreboard = nullptr;
+    capacity = 0;
+    size = 0;
 }
 
 // Default constructor
-Umpire :: Umpire() {
+Umpire::Umpire() {
     this->serverScore = 0;
-    this->receiverScore = 0; 
+    this->receiverScore = 0;
     this->serverPoints = 0;
     this->receiverPoints = 0;
+    scoreboard = nullptr;
+    capacity = 0;
+    size = 0;
 }
 
-// GETTERS AND SETTERS 
-float Umpire :: get_serverScore() {
+//Destructor
+Umpire::~Umpire(){
+    delete[] scoreboard;    //deallocate memory
+}
+
+// Getter and Setter methods
+float Umpire::get_serverScore() {
     return serverScore;
 }
 
-void Umpire :: set_serverScore(float serverScore) {
+void Umpire::set_serverScore(float serverScore) {
     this->serverScore = serverScore;
 }
 
-float Umpire :: get_receiverScore() {
+float Umpire::get_receiverScore() {
     return receiverScore;
 }
 
-void Umpire :: set_receiverScore(float receiverScore) {
+void Umpire::set_receiverScore(float receiverScore) {
     this->receiverScore = receiverScore;
 }
 
-int Umpire :: get_serverPoints(){
+int Umpire::get_serverPoints() {
     return serverPoints;
 }
 
-void Umpire :: set_serverPoints(int points){
+void Umpire::set_serverPoints(int points) {
     this->serverPoints = points;
 }
 
-int Umpire :: get_receiverPoints(){
+int Umpire::get_receiverPoints() {
     return receiverPoints;
 }
 
-void Umpire :: set_receiverPoints(int points){
+void Umpire::set_receiverPoints(int points) {
     this->receiverPoints = points;
 }
 
-//FUNCTIONS
-//This function takes a server object as a parameter and starts the game 
-//by "serving" the ball. The umpire will also retreive the Server's score
-//for this round. 
-void Umpire :: serve(Server& S){
-    //Use the play() function in the server object
+// Functions
+void Umpire::serve(Server& S) {
+    // Use the play() function in the server object
     S.play();
-    //retrieving the Servers Score
+    // Retrieving the Server's Score
     serverScore = S.getRoundScore();
-    
 }
 
-//This function takes a receiver object as a parameter and allows the
-//receiver to "receive the ball". The umpire will also retreive the 
-//Receiver's score for this round. 
-void Umpire :: receive(Receiver& R){
-    //Use the play() function in the receiver object
+void Umpire::receive(Receiver& R) {
+    // Use the play() function in the receiver object
     R.play();
-    //retrieving the Servers Score
+    // Retrieving the Receiver's Score
     receiverScore = R.getRoundScore();
 }
 
-//This function compares the scores from the two players. Whoever has the
-//higher score will win points.
-void Umpire :: givePoints(Server& S, Receiver& R){
-      //Check if it's a let
+void Umpire::givePoints(Server& S, Receiver& R) {
+    // Check if it's a let
     if (serverScore == receiverScore) {
         cout << "Let! The server will retake the serve." << endl;
         return;
     }
 
-    //Check for Ace or perfect return
-    if (serverScore > receiverScore + 3){
+    // Check for Ace or perfect return
+    if (serverScore > receiverScore + 3) {
         cout << "Ace!" << endl;
-    }else if (receiverScore > serverScore + 3){
+    }
+    else if (receiverScore > serverScore + 3) {
         cout << "Perfect return!" << endl;
     }
-    //Check which player wins the point. Tennis points go from:
-    //0 --> 15 --> 30 --> 40 (maybe deuce) --> (advantage) --> Winner
+
+    // Check which player wins the point. Tennis points go from:
+    // 0 --> 15 --> 30 --> 40 (maybe deuce) --> (advantage) --> Winner
     if (serverScore > receiverScore) {
         cout << S.getName() << "'s point!" << endl;
         if (serverPoints < 30)
             serverPoints += 15;
         else
             serverPoints += 10;
-    } else {
+    }
+    else {
         cout << R.getName() << "'s point!" << endl;
         if (receiverPoints < 30)
             receiverPoints += 15;
@@ -110,39 +115,83 @@ void Umpire :: givePoints(Server& S, Receiver& R){
     }
 }
 
-void Umpire :: announcePoints(){
-    if (serverPoints == 50 && receiverPoints == 50){
+void Umpire::announcePoints() {
+    string score;
+    if (serverPoints == 50 && receiverPoints == 50) {
         serverPoints = 40;
         receiverPoints = 40;
     }
-    if (serverPoints == 40 && receiverPoints ==40){
+    if (serverPoints == 40 && receiverPoints == 40) {
         cout << get_serverPoints() << "-" << get_receiverPoints() << endl;
-        cout << "Duece" << endl << endl;
-    }else if (serverPoints == 50 && receiverPoints == 40){
+        cout << "Deuce" << endl << endl;
+        score = "Deuce";
+        addScore(score);
+
+    }
+    else if (serverPoints == 50 && receiverPoints == 40) {
         cout << "Advantage Server" << endl << endl;
-    }else if (receiverPoints == 50 && serverPoints == 40){
+        score = "Advantage Server";
+        addScore(score);
+    }
+    else if (receiverPoints == 50 && serverPoints == 40) {
         cout << "Advantage Receiver" << endl << endl;
-    }else{
+        score = "Advantage Receiver";
+        addScore(score);
+    }
+    else {
         cout << get_serverPoints() << "-" << get_receiverPoints() << endl << endl;
+        score = to_string(get_serverPoints()) + "-" + to_string(get_receiverPoints());
+        addScore(score);
     }
 }
 
-//This function will run after each point is played and points have been
-//allocated. It will check to see if the server or receiver has won yet.
-int Umpire :: checkWinner(Server& S, Receiver& R){
-    if (serverPoints > 50){
+void Umpire::addScore(const string& score){
+     // Create a new dynamic array with increased size
+    string* newScoreboard = new string[size + 1];
+
+    // Copy existing scores to the new array
+    for (int i = 0; i < size; i++) {
+        newScoreboard[i] = scoreboard[i];
+    }
+
+    // Add the new score to the end of the new array
+    newScoreboard[size] = score;
+
+    // Free the memory occupied by the old scoreboard
+    delete[] scoreboard;
+
+    // Set the scoreboard pointer to the new array
+    scoreboard = newScoreboard;
+
+    // Update the scoreboard size
+    size += 1;
+}
+
+int Umpire::checkWinner(Server& S, Receiver& R) {
+    if (serverPoints > 50) {
         cout << S.getName() << " wins!" << endl;
         return 0;
-    }else if (receiverPoints > 50) {
-         cout << R.getName() << " wins!" << endl;
-         return 0;
-    }else if (serverPoints == 50 && receiverPoints <50){
+    }
+    else if (receiverPoints > 50) {
+        cout << R.getName() << " wins!" << endl;
+        return 0;
+    }
+    else if (serverPoints == 50 && receiverPoints < 50) {
         cout << S.getName() << " wins!" << endl;
         return 0;
-    }else if (receiverPoints == 50 && serverPoints <50){
-        cout << S.getName() << " wins!" << endl;
+    }
+    else if (receiverPoints == 50 && serverPoints < 50) {
+        cout << R.getName() << " wins!" << endl;
         return 0;
-    }else{
+    }
+    else {
         return 1;
+    }
+}
+
+void Umpire::printScoreboard() {
+    cout << "Scoreboard:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << scoreboard[i] << endl;
     }
 }
