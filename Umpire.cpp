@@ -117,7 +117,7 @@ void Umpire :: announcePoints(){
     }
     if (serverPoints == 40 && receiverPoints ==40){
         cout << get_serverPoints() << "-" << get_receiverPoints() << endl;
-        cout << "Duece!" << endl << endl;
+        cout << "Duece" << endl << endl;
     }else if (serverPoints == 50 && receiverPoints == 40){
         cout << "Advantage Server" << endl << endl;
     }else if (receiverPoints == 50 && serverPoints == 40){
