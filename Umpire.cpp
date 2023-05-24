@@ -138,7 +138,9 @@ void Umpire::announcePoints() {
         score = "Advantage Receiver";
         addScore(score);
     }
-    else {
+    else if (serverPoints > 40 || receiverPoints > 40) {
+
+    }else{
         cout << get_serverPoints() << "-" << get_receiverPoints() << endl << endl;
         score = to_string(get_serverPoints()) + "-" + to_string(get_receiverPoints());
         addScore(score);
@@ -168,19 +170,19 @@ void Umpire::addScore(const string& score){
 }
 
 int Umpire::checkWinner(Server& S, Receiver& R) {
-    if (serverPoints > 50) {
+    if (serverPoints > 55) {
         cout << S.getName() << " wins!" << endl;
         return 0;
     }
-    else if (receiverPoints > 50) {
+    else if (receiverPoints > 55) {
         cout << R.getName() << " wins!" << endl;
         return 0;
     }
-    else if (serverPoints == 50 && receiverPoints < 50) {
+    else if (serverPoints == 50 && receiverPoints < 40) {
         cout << S.getName() << " wins!" << endl;
         return 0;
     }
-    else if (receiverPoints == 50 && serverPoints < 50) {
+    else if (receiverPoints == 50 && serverPoints < 40) {
         cout << R.getName() << " wins!" << endl;
         return 0;
     }

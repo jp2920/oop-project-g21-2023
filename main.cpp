@@ -17,7 +17,7 @@ using namespace std;
 
 int main(){
 
-    /*/ Read in the read me file
+    // Read in the read me file
 
 
     // path to the file
@@ -40,7 +40,7 @@ int main(){
     } else {
         cout << "Failure to open the file" << endl;
     }
-    */
+
 
     //Seed the random number generator using the current time
     srand(time(nullptr));
@@ -56,40 +56,100 @@ int main(){
     server.setName(name);
 
     //enter the age
-    cout << "What is the server's Age?\n";
-    int age;
-    cin >> age;
+    int age = 0;
+    bool validInput = false;
+    while (!validInput) {
+        cout << "What is the server's age? (between 0 and 100)\n";
+        cin >> age;
+
+        if (cin.fail() || age < 0 || age > 100) {
+            cout << "Invalid input. Age should be an integer between 0 and 100." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
     server.setAge(age);
 
     // enter weight
-    cout << "What is the Server's weight?\n"; 
-    int weight;
-    cin >> weight;
+    float weight;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the server's weight? (between 0 and 150)\n";
+        cin >> weight;
+        if (cin.fail() || weight < 0 || weight > 150) {
+            cout << "Invalid input. Weight should be a value between 0 and 150." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
     server.setWeight(weight);
 
-    // enter power
-    cout << "What is the Server's power?\n"; 
+    //enter power
     int power;
-    cin >> power;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the server's power? (between 1 and 10)\n";
+        cin >> power;
+        if (cin.fail() || power < 1 || power > 10) {
+            cout << "Invalid input. Power should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
     server.setPower(power);
 
-    // enter speed
-    cout << "What is the Server's speed?\n"; 
+    //enter speed
     int speed;
-    cin >> speed;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the server's speed? (between 500 and 1500)\n";
+        cin >> speed;
+        if (cin.fail() || speed < 500 || speed > 1500) {
+            cout << "Invalid input. Speed should be an integer between 500 and 1500." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
     server.setRawSpeed(speed);
 
     // enter rallying ability
-    cout << "What is the Server's rallying ability?\n"; 
-    int rallyingAbility;
-    cin >> rallyingAbility;
-    server.setRallyingAbility(rallyingAbility);
+    int rally;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the server's rallying ability? (between 1 and 10)\n";
+        cin >> rally;
+        if (cin.fail() || rally < 1 || rally > 10) {
+            cout << "Invalid input. Rallying ability should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    server.setRallyingAbility(rally);
 
-    // enter serving ability
-    cout << "What is the Server's serving ability?\n"; 
-    int servingAbility;
-    cin >> servingAbility;   
-    server.setServingAbility(servingAbility);
+    //enter serving ability
+    int serve;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the server's serving ability? (between 1 and 10)\n";
+        cin >> serve;
+        if (cin.fail() || serve < 1 || serve > 10) {
+            cout << "Invalid input. Serving ability should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
 
     server.setLuck();
 
@@ -106,46 +166,102 @@ int main(){
     receiver.setName(nameReceiver);
 
     //enter the age
-    cout << "What is the receiver's age?\n";
-    int ageReceiver;
-    cin >> ageReceiver;
-    receiver.setAge(ageReceiver);
+    age = 0;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's age? (between 0 and 100)\n";
+        cin >> age;
+        if (cin.fail() || age < 0 || age > 100) {
+            cout << "Invalid input. Age should be an integer between 0 and 100." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    receiver.setAge(age);
 
-    // enter weight
-    cout << "What is the receiver's weight?\n"; 
-    int weightReceiver;
-    cin >> weightReceiver;
-    receiver.setWeight(weightReceiver);
+    //enter weight
+    weight = 0;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's weight? (between 0 and 150)\n";
+        cin >> weight;
+        if (cin.fail() || weight < 0 || weight > 150) {
+            cout << "Invalid input. Weight should be a value between 0 and 150." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    receiver.setWeight(weight);
 
     // enter power
-    cout << "What is the receiver's power?\n"; 
-    int powerReceiver;
-    cin >> powerReceiver;
-    receiver.setPower(powerReceiver);
+    power = 0;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's power? (between 1 and 10)\n";
+        cin >> power;
+        if (cin.fail() || power < 1 || power > 10) {
+            cout << "Invalid input. Power should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    receiver.setPower(power);
 
     // enter speed
-    cout << "What is the receiver's speed?\n"; 
-    int speedReceiver;
-    cin >> speedReceiver;
-    receiver.setRawSpeed(speedReceiver);
+    speed = 0;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's speed? (between 500 and 1500)\n";
+        cin >> speed;
+        if (cin.fail() || speed < 500 || speed > 1500) {
+            cout << "Invalid input. Speed should be an integer between 500 and 1500." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    receiver.setRawSpeed(speed);
 
     // enter rallying ability
-    cout << "What is the receiver's rallying ability?\n"; 
-    int rallyingAbilityReceiver;
-    cin >> rallyingAbilityReceiver;
-    receiver.setRallyingAbility(rallyingAbilityReceiver);
+    rally = 0;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's rallying ability? (between 1 and 10)\n";
+        cin >> rally;
+        if (cin.fail() || rally < 1 || rally > 10) {
+            cout << "Invalid input. Rallying ability should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }
+    receiver.setRallyingAbility(rally);
 
     // enter receiving ability
-    cout << "What is the receiver's receiving ability?\n"; 
-    int receivingAbility;
-    cin >> receivingAbility;   
-    receiver.setReceivingAbility(receivingAbility);
+    int receive;
+    validInput = false;
+    while (!validInput) {
+        cout << "What is the receiver's receiving ability? (between 1 and 10)\n";
+        cin >> receive;
+        if (cin.fail() || receive < 1 || receive > 10) {
+            cout << "Invalid input. Receiving ability should be an integer between 1 and 10." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } else {
+            validInput = true;
+        }
+    }  
+    receiver.setReceivingAbility(receive);
 
     receiver.setLuck();
-
-    // Starting score for the game
-    cout << "The Server's score is: " << server.getRoundScore() << endl;
-    cout << "The Receiver's score is: " << receiver.getRoundScore() << endl;
 
     int x = 1;
 
@@ -163,6 +279,7 @@ int main(){
 
     cout << "Thanks for playing!" << endl;
 
+    cout << "\n";
     umpire.printScoreboard();
 
 
